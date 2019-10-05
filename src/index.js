@@ -26,7 +26,7 @@ const resolvers = {
           title,
           content,
         },
-        where: id
+        where: { id }
       })
     },
     deletePost(parent, { id }, context) {
