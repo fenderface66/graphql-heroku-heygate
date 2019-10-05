@@ -20,6 +20,15 @@ const resolvers = {
         content,
       })
     },
+    updatePost(parent, { title, content, id }, context) {
+      return context.prisma.updatePost({
+        data: {
+          title,
+          content,
+        },
+        where: id
+      })
+    },
     deletePost(parent, { id }, context) {
       return context.prisma.deletePost({ id })
     },
